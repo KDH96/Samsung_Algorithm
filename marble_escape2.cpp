@@ -10,6 +10,7 @@ struct INFO{
 INFO start;
 //문자열 종료문자까지 저장하기 위해 x를 11로 설정.
 char map[10][11];
+
 int bfs(){
     // 네 방향 문제 기본 설정
     const int dy[] = { -1, 1, 0, 0};
@@ -19,11 +20,11 @@ int bfs(){
     queue<INFO> q;
     q.push(start);
     visited[start.ry][start.rx][start.by][start.bx] = 1;
-    
     int ret = -1;
+    
     while (!q.empty()) {
         INFO cur = q.front(); q.pop();
-        // 탈출 조건
+        // 탈출 조건 먼저
         if (cur.cnt > 10 ) break;
         if (map[cur.ry][cur.rx] == 'O' && map[cur.by][cur.bx] != 'O'){
             ret = cur.cnt;
@@ -90,11 +91,17 @@ int bfs(){
 
 int main(){
     //문자열 입력 받는 부분.
-    int n, m;
+    int n, m; //n 세로, m 가로
     cin >> n >> m ;
+    // 문자열 입력 받는 경우, 배열의 세로 인덱스만 있어도 가능하다.
     for(int i=0; i<n;++i){
         cin >> map[i];
     }
+    // for(int y=0; y<n;y++){
+    //     for(int x=0; x<m;x++){
+    //         cin >> map[y][x];
+    //     }
+    // }
     // 공의 좌표 찾기
     for(int y=0;y<n;++y){
         for(int x=0;x<m;++x){
