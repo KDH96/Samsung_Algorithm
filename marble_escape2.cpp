@@ -12,7 +12,6 @@ INFO start;
 char map[10][11];
 
 int bfs(){
-    // 네 방향 문제 기본 설정
     const int dy[] = { -1, 1, 0, 0};
     const int dx[] = { 0, 0, -1, 1};
     //방문했는지 표시를 위함.
