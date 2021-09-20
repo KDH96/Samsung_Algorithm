@@ -15,6 +15,106 @@ int get_max(){
     }
     return ret;
 }
+//큐로 만든 move
+/*void move(int dir){
+    int temp[20][20] ={0,};
+    queue<int> q;
+    switch(dir){
+        case 0: //up
+            for(int x = 0; x<n; x++){
+                int index = -1; bool flag = false;
+                for(int y=0; y<n; y++){
+                    if(board[y][x] == 0 ) continue;
+                    else{
+                        q.push(board[y][x]);
+                        board[y][x] = 0;
+                    }
+                }
+                while(!q.empty()){
+                    int val = q.front(); q.pop();
+                    if(flag && board[index][x] == val){
+                        board[index][x] *= 2;
+                        flag = false;
+                    }
+                    else{
+                        board[++index][x] = val;
+                        flag = true;
+                    }
+                }
+            }
+            break;
+        case 1: // down
+            for(int x = 0; x<n; x++){
+                int index = n; bool flag = false;
+                for(int y=n-1; y>-1; y--){
+                    if(board[y][x] == 0 ) continue;
+                    else{
+                        q.push(board[y][x]);
+                        board[y][x] = 0;
+                    }
+                }
+                while(!q.empty()){
+                    int val = q.front(); q.pop();
+                    if(flag && board[index][x] == val){
+                        board[index][x] *= 2;
+                        flag = false;
+                    }
+                    else{
+                        board[--index][x] = val;
+                        flag = true;
+                    }
+                }
+            }
+            break;
+        case 2:// left
+            for(int y = 0; y<n; y++){
+                int index = -1; bool flag = false;
+                for(int x=0; x<n; x++){
+                    if(board[y][x] == 0 ) continue;
+                    else{
+                        q.push(board[y][x]);
+                        board[y][x] = 0;
+                    }
+                }
+                while(!q.empty()){
+                    int val = q.front(); q.pop();
+                    if(flag && board[y][index] == val){
+                        board[y][index] *= 2;
+                        flag = false;
+                    }
+                    else{
+                        board[y][++index] = val;
+                        flag = true;
+                    }
+                }
+            }
+            break;        
+        case 3:// right
+            for(int y = 0; y<n; y++){
+                int index = n; bool flag = false;
+                for(int x=n-1; x>-1; x--){
+                    if(board[y][x] == 0 ) continue;
+                    else{
+                        q.push(board[y][x]);
+                        board[y][x] = 0;
+                    }
+                }
+                while(!q.empty()){
+                    int val = q.front(); q.pop();
+                    if(flag && board[y][index] == val){
+                        board[y][index] *= 2;
+                        flag = false;
+                    }
+                    else{
+                        board[y][--index] = val;
+                        flag = true;
+                    }
+                }
+            }
+            break;  
+        default: break;
+    }
+}*/
 void move(int dir){
     int temp[20][20] ={0,};
     switch(dir){
