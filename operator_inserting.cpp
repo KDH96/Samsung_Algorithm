@@ -61,4 +61,5 @@ int main(){
 
     op_dfs(A[0], 1);
     cout << max_n << "\n" << min_n << "\n" ;
+    return 0;
 }
