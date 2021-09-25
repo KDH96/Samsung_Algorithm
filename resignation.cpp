@@ -34,3 +34,34 @@ int main(){
     cout << answer << endl;
     return 0;
 }
+
+/* dfs 풀이 추가
+#include<iostream>
+#include<algorithm>
+
+using namespace std;
+
+int n, MAX;
+int t[15], p[15];
+
+void dfs(int day, int sum){
+
+    if( day == n){
+        MAX = max(MAX, sum);
+        return;
+    }
+    if(day + t[day] <= n){
+        dfs(day + t[day], sum + p[day]);
+    }
+    dfs(day + 1, sum);
+}
+int main(){
+    cin >> n;
+    for(int i = 0; i < n; ++i){
+        cin >> t[i] >> p[i];
+    }
+
+    dfs(0, 0);
+    cout << MAX << endl;
+}
+*/
